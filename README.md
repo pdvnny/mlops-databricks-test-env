@@ -1,6 +1,4 @@
-# MLOps with Databricks in Public Clouds
-
-**DEV REPO**
+# DEV REPO
 
 Associated with EC 528 at Boston University  
 Group 11
