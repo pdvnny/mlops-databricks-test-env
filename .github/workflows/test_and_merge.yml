@@ -1,0 +1,13 @@
+name: test_and_merge
+run_name: ${{ github.actor }} requests to update main branch
+on: [pull_request]
+jobs:
+  run-sorting-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+      - name: Run the test code in sorting_test
+        run: |
+          python sorting_test.py
