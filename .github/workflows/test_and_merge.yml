@@ -1,5 +1,5 @@
 name: test_and_merge
-run_name: ${{ github.actor }} requests to update main branch
+run-name: ${{ github.actor }} requests to update main branch
 on: [pull_request]
 jobs:
   run-sorting-tests:
