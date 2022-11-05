@@ -1,13 +1,45 @@
+# I'm following demos from the GitHub Actions resource for most of this
+# I've included comments below at points that I particularly did not understand
+
 name: test_and_merge
+
 run-name: ${{ github.actor }} requests to update main branch
-on: [pull_request]
+
+on:
+  pull_request:
+    branches:
+      [ main ]  # not sure how to properly define which branch to check
+                # e.g., the demos use "[ $default-branch ]" - no idea what that refers to exactly
+  push:
+    branches:
+      [ main ]
+
 jobs:
+
   run-sorting-tests:
+
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v4  # not sure what v4 means ... a github thing I think
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: |
+          python -m install pip install --upgrade pip
+          pip install pytest
+
+      # Good example here of how to setup the environment
+      # I did not include the below, but it definitely feels like it would be useful in the future
+      # Shell/Bash scripting --> "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi"
+
       - name: Run the test code in sorting_test
         run: |
           python sorting_test.py
+
+      - name: Test with pytest
+        run: pytest -v
