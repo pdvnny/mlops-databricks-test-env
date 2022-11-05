@@ -37,9 +37,9 @@ jobs:
       # I did not include the below, but it definitely feels like it would be useful in the future
       # Shell/Bash scripting --> "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi"
 
-      - name: Run the test code in sorting_test
-        run: |
-          python sorting_test.py
+      #- name: Run the test code in sorting_test
+      #  run: |
+      #    python sorting_test.py
 
       - name: Test with pytest
         run: pytest -v --ignore "scrap"
