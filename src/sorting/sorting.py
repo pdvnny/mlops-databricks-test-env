@@ -1,3 +1,15 @@
+"""
+Copyright 2022 Parker Dunn (pgdunn@bu.edu)
+
+Group 11
+
+This module contains a couple sorting algorithms.
+
+These algos are meant to provide a simple example of code that
+can be tested and deployed to experiment with CI/CD (DevOps)
+
+"""
+
 def bubbleSort(arr):
     """
     :param: arr This is an array that needs to be sorted. It is sorted in-place.
